@@ -1,71 +1,39 @@
-#THIRD_PARTY_APPS
-from firebase_admin import auth
-#rest_framework
+"""Users views."""
+
+# Django REST Framework
+from rest_framework import status, viewsets
+from rest_framework.decorators import action
 from rest_framework.response import Response
-from rest_framework.permissions import AllowAny
-from rest_framework.views import APIView
-from rest_framework.authtoken.models import Token
-#django import
-from django.views.generic import TemplateView
-#
+
+# Serializers
+from .serializers import UserLoginSerializer, UserModelSerializer, UserSignUpSerializer
+
+# Models
 from .models import User
 
-#
-from .serializers import (
-    UserSerializer,
-    LoginSocialSerializer
-)
+class UserViewSet(viewsets.GenericViewSet):
 
+    queryset = User.objects.filter(is_active=True)
+    serializer_class = UserModelSerializer
 
-class LoginUser(TemplateView):
-    template_name = "users/login.html"
-
-
-class GoogleLoginView(APIView):
-    """
-        para iniciar sesion co una cuenta google
-    """
-
-    serializer_class = LoginSocialSerializer
-    permission_classes = (AllowAny,)
-
-    def post(self, request):
-        serializer = self.serializer_class(data=request.data)
+    # Detail define si es una petición de detalle o no, en methods añadimos el método permitido, en nuestro caso solo vamos a permitir post
+    @action(detail=False, methods=['post'])
+    def login(self, request):
+        """User sign in."""
+        serializer = UserLoginSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
-        #
-        id_token = serializer.data.get('token_id')
-        #
-        decoded_token = auth.verify_id_token(id_token)
-        #
-        #
-        email = decoded_token['email']
-        name = decoded_token['name']
-        avatar = decoded_token['picture']
-        verified = decoded_token['email_verified']
-        #
-        usuario, created = User.objects.get_or_create(
-            email=email,
-            defaults={
-                'full_name': name,
-                'email': email,
-                'is_active': True
-            }
-        )
-        #
-        if created:
-            # creamos el token
-            token = Token.objects.create(user=usuario)
-        else:
-            # Creamos el nuevo usuario
-            token = Token.objects.get(user=usuario)
-        #
-        userGet = {
-            'id': usuario.pk,
-            'email': usuario.email,
-            'full_name': usuario.full_name,
-           
+        user, token = serializer.save()
+        data = {
+            'user': UserModelSerializer(user).data,
+            'access_token': token
         }
-        return Response({
-            'token': token.key,
-            'user': userGet
-        })
+        return Response(data, status=status.HTTP_201_CREATED)
+
+    @action(detail=False, methods=['post'])
+    def signup(self, request):
+        """User sign up."""
+        serializer = UserSignUpSerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        user = serializer.save()
+        data = UserModelSerializer(user).data
+        return Response(data, status=status.HTTP_201_CREATED)

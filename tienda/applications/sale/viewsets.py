@@ -32,7 +32,7 @@ class SalesViewSet(viewsets.ViewSet):
         if (self.action == 'list') or (self.action == 'retrieve'):
             permission_classes = [AllowAny]
         else:
-            permission_classes = [AllowAny]
+            permission_classes = [IsAuthenticated]
         return [permission() for permission in permission_classes]
 
     def list(self, request):

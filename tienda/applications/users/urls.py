@@ -1,22 +1,22 @@
-# django
-from django.urls import path
+"""Users URLs."""
 
-# local
-from . import views
+# Django
+from django.urls import include, path
 
-app_name="users_app"
+# Django REST Framework
+from rest_framework.routers import DefaultRouter
+
+# Views
+from . import views as user_views
+
+router = DefaultRouter()
+router.register(r'users', user_views.UserViewSet, basename='users')
 
 urlpatterns = [
-    # template login
-    path(
-        'login/',
-        views.LoginUser.as_view(),
-        name='login'
-    ),
-    # Para Login y registro con Google
-    path(
-        'api/google-login/',
-        views.GoogleLoginView.as_view(),
-        name='users-google_login'
-    ),
+    path('', include(router.urls))
 ]
+
+
+
+
+
