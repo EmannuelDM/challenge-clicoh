@@ -117,6 +117,12 @@ class SalesViewSet(viewsets.ViewSet):
     
 
     def destroy(self, request, pk=None):
-        Order.objects.get(id=pk).delete()
+        order = Order.objects.get(id=pk)  
+        details = OrderDetail.objects.select_related().filter(order = pk)      
+        for detail in details:
+            prod = Product.objects.get(id=detail.product_id)
+            prod.stock += detail.cuantity
+            prod.save()
+        order.delete()
     
         return Response({'status': 'ok', 'msg':"Successfully deleted"})
