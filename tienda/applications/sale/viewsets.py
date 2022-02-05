@@ -49,20 +49,22 @@ class SalesViewSet(viewsets.ViewSet):
     
     def create(self, request):
         serializer = SaleProcessSerializer(data=request.data)
-        print(serializer)
         serializer.is_valid(raise_exception=True)
         sale = Order.objects.create(
             date_order=timezone.now(),
         )
         # recuperamos los products de la sale
         products = serializer.validated_data['products']
-        products_ids = [product.product_id for product in products]
+        products_ids = [product["pk"] for product in products]
         products_ids = set(products_ids)
+        print(products_ids)
         # para cada product regustramos una venta detalle
         sale_details = []
         for product in products:
-            if product.product_id in products_ids:
-                products_ids.remove(product.product_id)
+            if product["pk"] in products_ids:
+                print(product["pk"])
+                products_ids.remove(product["pk"])
+                print(products_ids)
             else:
                 continue
             if product['cuantity'] <=0:
@@ -80,6 +82,7 @@ class SalesViewSet(viewsets.ViewSet):
                 )
                 #
                 sale_details.append(order_detail)
+                print(sale_details)
 
         OrderDetail.objects.bulk_create(sale_details)
         return Response({'status': 'ok', 'msg':"Successfully created"})
