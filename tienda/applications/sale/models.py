@@ -8,7 +8,7 @@ from model_utils.models import TimeStampedModel
 from applications.product.models import Product
 
 #
-from .managers import OrderDetailManager
+from .managers import OrderDetailManager, OrderManager
 
 
 class Order(TimeStampedModel):
@@ -21,6 +21,7 @@ class Order(TimeStampedModel):
         null=True
     )
    
+    objects = OrderManager()
 
     class Meta:
         verbose_name = 'Sale'

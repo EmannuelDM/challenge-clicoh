@@ -56,18 +56,26 @@ class SalesViewSet(viewsets.ViewSet):
         )
         # recuperamos los products de la sale
         products = serializer.validated_data['products']
-        # para cada producto regustramos una venta detalle
+        products_ids = [product.product_id for product in products]
+        products_ids = set(products_ids)
+        # para cada product regustramos una venta detalle
         sale_details = []
-        for producto in products:
-            # recuperamos producto
-            prod = Product.objects.get(id=producto['pk'])
-            if prod.stock >= producto['cuantity']:
-                prod.stock -= producto['cuantity']
+        for product in products:
+            if product.product_id in products_ids:
+                products_ids.remove(product.product_id)
+            else:
+                continue
+            if product['cuantity'] <=0:
+                continue
+            # recuperamos product
+            prod = Product.objects.get(id=product['pk'])
+            if prod.stock >= product['cuantity']:
+                prod.stock -= product['cuantity']
                 prod.save()
                 order_detail = OrderDetail(
                     order=sale,
                     product=prod,
-                    cuantity=producto['cuantity'],
+                    cuantity=product['cuantity'],
                 
                 )
                 #
