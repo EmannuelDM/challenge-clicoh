@@ -12,7 +12,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n   \n    \"name\":\"samsung\",\n    \"price\":3000,\n    \"stock\":40\n}",
+					"raw": "{\n   \n    \"name\":\"licuadora\",\n    \"price\":3000,\n    \"stock\":40\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -66,7 +66,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://127.0.0.1:8000/products/1/",
+					"raw": "http://127.0.0.1:8000/products/4/",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -77,7 +77,7 @@
 					"port": "8000",
 					"path": [
 						"products",
-						"1",
+						"4",
 						""
 					]
 				}
@@ -90,7 +90,7 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://127.0.0.1:8000/products/1/",
+					"raw": "http://127.0.0.1:8000/products/4/",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -101,7 +101,7 @@
 					"port": "8000",
 					"path": [
 						"products",
-						"1",
+						"4",
 						""
 					]
 				}
@@ -115,7 +115,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n   \n    \"name\":\"samsung\",\n    \"price\":2000,\n    \"stock\":50\n}",
+					"raw": "{\n   \n    \"name\":\"motorola\",\n    \"price\":3000,\n    \"stock\":100\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -123,7 +123,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://127.0.0.1:8000/products/2/",
+					"raw": "http://127.0.0.1:8000/products/3/",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -134,7 +134,7 @@
 					"port": "8000",
 					"path": [
 						"products",
-						"2",
+						"3",
 						""
 					]
 				}
@@ -170,7 +170,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://127.0.0.1:8000/sales/2/",
+					"raw": "http://127.0.0.1:8000/sales/17/",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -181,7 +181,7 @@
 					"port": "8000",
 					"path": [
 						"sales",
-						"2",
+						"17",
 						""
 					]
 				}
@@ -192,10 +192,22 @@
 			"name": "sales_create_order",
 			"request": {
 				"method": "POST",
-				"header": [],
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token  afbb9b9c2702fd53449171c61524ee88adb06d6a",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "Random_password",
+						"type": "text",
+						"disabled": true
+					}
+				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"products\":[\n\n        {\"pk\":\"2\",\n        \"cuantity\":5\n        }\n       \n    ]\n}",
+					"raw": "{\n    \"products\":[\n\n        {\"pk\":\"2\",\n        \"cuantity\":7\n        },\n            {\"pk\":\"3\",\n        \"cuantity\":4\n        },\n         {\"pk\":\"2\",\n        \"cuantity\":30\n        }\n\n       \n    ]\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -259,7 +271,7 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://127.0.0.1:8000/sales/1/",
+					"raw": "http://127.0.0.1:8000/sales/5/",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -270,7 +282,7 @@
 					"port": "8000",
 					"path": [
 						"sales",
-						"1",
+						"5",
 						""
 					]
 				}
@@ -284,7 +296,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\"email\":\"ema@gmail.com\",\n\"password\":\"estaesunaprueba\"\n}",
+					"raw": "{\n\"email\":\"ema@gmail.com\",\n\"password\":\"Random_password\"\n\n}",
 					"options": {
 						"raw": {
 							"language": "json"
