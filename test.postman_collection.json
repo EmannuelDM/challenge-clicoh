@@ -35,7 +35,78 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "product_create",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \n    \"name\":\"licuadora\",\n    \"price\":3000,\n    \"stock\":40\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/products/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"products",
+								""
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 07 Feb 2022 11:45:43 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.8.10"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "134"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 5,\n    \"created\": \"2022-02-07T11:45:43.217819Z\",\n    \"modified\": \"2022-02-07T11:45:43.217819Z\",\n    \"name\": \"licuadora\",\n    \"price\": 3000,\n    \"stock\": 40\n}"
+				}
+			]
 		},
 		{
 			"name": "product_list",
@@ -58,7 +129,69 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "product_list",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/products/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"products",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 07 Feb 2022 11:45:59 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.8.10"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "453"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"count\": 3,\n    \"next\": null,\n    \"previous\": null,\n    \"results\": [\n        {\n            \"id\": 2,\n            \"created\": \"2022-02-05T03:08:10.019821Z\",\n            \"modified\": \"2022-02-07T10:27:47.050545Z\",\n            \"name\": \"samsung\",\n            \"price\": 3000,\n            \"stock\": 72\n        },\n        {\n            \"id\": 3,\n            \"created\": \"2022-02-05T12:28:32.923797Z\",\n            \"modified\": \"2022-02-07T10:27:47.055001Z\",\n            \"name\": \"motorola\",\n            \"price\": 3000,\n            \"stock\": 84\n        },\n        {\n            \"id\": 5,\n            \"created\": \"2022-02-07T11:45:43.217819Z\",\n            \"modified\": \"2022-02-07T11:45:43.217819Z\",\n            \"name\": \"licuadora\",\n            \"price\": 3000,\n            \"stock\": 40\n        }\n    ]\n}"
+				}
+			]
 		},
 		{
 			"name": "product_get_item",
@@ -66,7 +199,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://127.0.0.1:8000/products/4/",
+					"raw": "http://127.0.0.1:8000/products/3/",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -77,12 +210,75 @@
 					"port": "8000",
 					"path": [
 						"products",
-						"4",
+						"3",
 						""
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "product_get_item",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/products/3/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"products",
+								"3",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 07 Feb 2022 11:50:55 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.8.10"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "133"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 3,\n    \"created\": \"2022-02-05T12:28:32.923797Z\",\n    \"modified\": \"2022-02-07T10:27:47.055001Z\",\n    \"name\": \"motorola\",\n    \"price\": 3000,\n    \"stock\": 84\n}"
+				}
+			]
 		},
 		{
 			"name": "product_delete",
@@ -90,7 +286,7 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://127.0.0.1:8000/products/4/",
+					"raw": "http://127.0.0.1:8000/products/5/",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -101,12 +297,71 @@
 					"port": "8000",
 					"path": [
 						"products",
-						"4",
+						"5",
 						""
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "product_delete",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/products/5/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"products",
+								"5",
+								""
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 07 Feb 2022 11:51:33 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.8.10"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
 		},
 		{
 			"name": "product_update",
@@ -139,7 +394,79 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "product_update",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \n    \"name\":\"motorola\",\n    \"price\":3000,\n    \"stock\":100\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/products/3/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"products",
+								"3",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 07 Feb 2022 11:52:25 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.8.10"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "134"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 3,\n    \"created\": \"2022-02-05T12:28:32.923797Z\",\n    \"modified\": \"2022-02-07T11:52:25.398679Z\",\n    \"name\": \"motorola\",\n    \"price\": 3000,\n    \"stock\": 100\n}"
+				}
+			]
 		},
 		{
 			"name": "sales_list",
@@ -162,7 +489,69 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "sales_list",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/sales/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"sales",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 07 Feb 2022 11:52:46 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.8.10"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1867"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 12,\n        \"date_order\": \"2022-02-05T15:36:25.034424Z\",\n        \"products\": [\n            {\n                \"id\": 12,\n                \"order\": 12,\n                \"product\": \"motorola\",\n                \"product_id\": 3,\n                \"cuantity\": 4\n            },\n            {\n                \"id\": 11,\n                \"order\": 12,\n                \"product\": \"samsung\",\n                \"product_id\": 2,\n                \"cuantity\": 7\n            }\n        ],\n        \"total\": 6000,\n        \"usd_total\": 28.04\n    },\n    {\n        \"id\": 13,\n        \"date_order\": \"2022-02-05T15:37:38.654025Z\",\n        \"products\": [\n            {\n                \"id\": 13,\n                \"order\": 13,\n                \"product\": \"motorola\",\n                \"product_id\": 3,\n                \"cuantity\": 4\n            }\n        ],\n        \"total\": 3000,\n        \"usd_total\": 14.02\n    },\n    {\n        \"id\": 14,\n        \"date_order\": \"2022-02-05T15:40:28.569210Z\",\n        \"products\": [\n            {\n                \"id\": 14,\n                \"order\": 14,\n                \"product\": \"motorola\",\n                \"product_id\": 3,\n                \"cuantity\": 4\n            }\n        ],\n        \"total\": 3000,\n        \"usd_total\": 14.02\n    },\n    {\n        \"id\": 15,\n        \"date_order\": \"2022-02-05T15:43:13.070998Z\",\n        \"products\": [\n            {\n                \"id\": 15,\n                \"order\": 15,\n                \"product\": \"motorola\",\n                \"product_id\": 3,\n                \"cuantity\": 4\n            }\n        ],\n        \"total\": 3000,\n        \"usd_total\": 14.02\n    },\n    {\n        \"id\": 16,\n        \"date_order\": \"2022-02-05T15:43:59.958890Z\",\n        \"products\": [\n            {\n                \"id\": 16,\n                \"order\": 16,\n                \"product\": \"motorola\",\n                \"product_id\": 3,\n                \"cuantity\": 4\n            }\n        ],\n        \"total\": 3000,\n        \"usd_total\": 14.02\n    },\n    {\n        \"id\": 17,\n        \"date_order\": \"2022-02-05T15:45:52.476902Z\",\n        \"products\": [\n            {\n                \"id\": 18,\n                \"order\": 17,\n                \"product\": \"motorola\",\n                \"product_id\": 3,\n                \"cuantity\": 4\n            },\n            {\n                \"id\": 17,\n                \"order\": 17,\n                \"product\": \"samsung\",\n                \"product_id\": 2,\n                \"cuantity\": 7\n            }\n        ],\n        \"total\": 6000,\n        \"usd_total\": 28.04\n    },\n    {\n        \"id\": 18,\n        \"date_order\": \"2022-02-05T21:38:05.642087Z\",\n        \"products\": [\n            {\n                \"id\": 20,\n                \"order\": 18,\n                \"product\": \"motorola\",\n                \"product_id\": 3,\n                \"cuantity\": 4\n            },\n            {\n                \"id\": 19,\n                \"order\": 18,\n                \"product\": \"samsung\",\n                \"product_id\": 2,\n                \"cuantity\": 7\n            }\n        ],\n        \"total\": 6000,\n        \"usd_total\": 28.04\n    },\n    {\n        \"id\": 19,\n        \"date_order\": \"2022-02-07T10:25:14.265871Z\",\n        \"products\": [\n            {\n                \"id\": 22,\n                \"order\": 19,\n                \"product\": \"motorola\",\n                \"product_id\": 3,\n                \"cuantity\": 4\n            },\n            {\n                \"id\": 21,\n                \"order\": 19,\n                \"product\": \"samsung\",\n                \"product_id\": 2,\n                \"cuantity\": 7\n            }\n        ],\n        \"total\": 6000,\n        \"usd_total\": 28.04\n    },\n    {\n        \"id\": 20,\n        \"date_order\": \"2022-02-07T10:27:47.045695Z\",\n        \"products\": [\n            {\n                \"id\": 24,\n                \"order\": 20,\n                \"product\": \"motorola\",\n                \"product_id\": 3,\n                \"cuantity\": 4\n            },\n            {\n                \"id\": 23,\n                \"order\": 20,\n                \"product\": \"samsung\",\n                \"product_id\": 2,\n                \"cuantity\": 7\n            }\n        ],\n        \"total\": 6000,\n        \"usd_total\": 28.04\n    }\n]"
+				}
+			]
 		},
 		{
 			"name": "sales_get_order",
@@ -186,7 +575,70 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "sales_get_order",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/sales/17/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"sales",
+								"17",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 07 Feb 2022 11:53:15 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.8.10"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "237"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 17,\n    \"date_order\": \"2022-02-05T15:45:52.476902Z\",\n    \"products\": [\n        {\n            \"id\": 18,\n            \"order\": 17,\n            \"product\": \"motorola\",\n            \"product_id\": 3,\n            \"cuantity\": 4\n        },\n        {\n            \"id\": 17,\n            \"order\": 17,\n            \"product\": \"samsung\",\n            \"product_id\": 2,\n            \"cuantity\": 7\n        }\n    ],\n    \"total\": 6000,\n    \"usd_total\": 28.04\n}"
+				}
+			]
 		},
 		{
 			"name": "sales_create_order",
@@ -200,7 +652,7 @@
 					},
 					{
 						"key": "",
-						"value": "Random_password",
+						"value": "Rest957_cat391",
 						"type": "text",
 						"disabled": true
 					}
@@ -230,16 +682,187 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "sales_create_order",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token  afbb9b9c2702fd53449171c61524ee88adb06d6a",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "Rest957_cat391",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"products\":[\n\n        {\"pk\":\"2\",\n        \"cuantity\":7\n        },\n            {\"pk\":\"3\",\n        \"cuantity\":4\n        },\n         {\"pk\":\"2\",\n        \"cuantity\":30\n        }\n\n       \n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/sales/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"sales",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 07 Feb 2022 10:25:14 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.8.10"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "44"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"ok\",\n    \"msg\": \"Successfully created\"\n}"
+				},
+				{
+					"name": "sales_create_order",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token  afbb9b9c2702fd53449171c61524ee88adb06d6a",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "Rest957_cat391",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"products\":[\n\n        {\"pk\":\"2\",\n        \"cuantity\":7\n        },\n            {\"pk\":\"3\",\n        \"cuantity\":4\n        },\n         {\"pk\":\"2\",\n        \"cuantity\":30\n        }\n\n       \n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/sales/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"sales",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 07 Feb 2022 11:53:35 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.8.10"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "44"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"ok\",\n    \"msg\": \"Successfully created\"\n}"
+				}
+			]
 		},
 		{
 			"name": "sale_update_detail",
 			"request": {
 				"method": "PATCH",
-				"header": [],
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token  afbb9b9c2702fd53449171c61524ee88adb06d6a",
+						"type": "text"
+					}
+				],
 				"body": {
 					"mode": "raw",
-					"raw": " {\n        \"id\": 11,\n        \"date_order\": \"2022-02-05T01:42:32.834208Z\",\n        \"products\": [\n            {\n                \"id\": 13,\n                \"order\": 11,\n                \"product\": \"sam\",\n                \"product_id\": 2,\n                \"cuantity\": 5\n            }\n        ]\n    }",
+					"raw": "{\n        \"id\": 19,\n        \"date_order\": \"2022-02-07T10:25:14.265871Z\",\n        \"products\": [\n            {\n                \"id\": 22,\n                \"order\": 19,\n                \"product\": \"motorola\",\n                \"product_id\": 3,\n                \"cuantity\": 5\n            },\n            {\n                \"id\": 21,\n                \"order\": 19,\n                \"product\": \"samsung\",\n                \"product_id\": 2,\n                \"cuantity\": 8\n            }\n        ],\n        \"total\": 6000.0,\n        \"usd_total\": 28.04\n    }",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -247,7 +870,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://127.0.0.1:8000/sales/1/",
+					"raw": "http://127.0.0.1:8000/sales/19/",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -258,12 +881,90 @@
 					"port": "8000",
 					"path": [
 						"sales",
-						"1",
+						"19",
 						""
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "sale_update_detail",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token  afbb9b9c2702fd53449171c61524ee88adb06d6a",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"id\": 19,\n        \"date_order\": \"2022-02-07T10:25:14.265871Z\",\n        \"products\": [\n            {\n                \"id\": 22,\n                \"order\": 19,\n                \"product\": \"motorola\",\n                \"product_id\": 3,\n                \"cuantity\": 5\n            },\n            {\n                \"id\": 21,\n                \"order\": 19,\n                \"product\": \"samsung\",\n                \"product_id\": 2,\n                \"cuantity\": 8\n            }\n        ],\n        \"total\": 6000.0,\n        \"usd_total\": 28.04\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/sales/19/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"sales",
+								"19",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 07 Feb 2022 11:56:00 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.8.10"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "42"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"ok\",\n    \"msg\": \"Successfully saved\"\n}"
+				}
+			]
 		},
 		{
 			"name": "sales_delete_order",
@@ -271,7 +972,7 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://127.0.0.1:8000/sales/5/",
+					"raw": "http://127.0.0.1:8000/sales/19/",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -282,12 +983,79 @@
 					"port": "8000",
 					"path": [
 						"sales",
-						"5",
+						"19",
 						""
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "sales_delete_order",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/sales/19/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"sales",
+								"19",
+								""
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 07 Feb 2022 11:56:18 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.8.10"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "WWW-Authenticate",
+							"value": "Token"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "65"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": \"Las credenciales de autenticación no se proveyeron.\"\n}"
+				}
+			]
 		},
 		{
 			"name": "login",
@@ -296,7 +1064,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\"email\":\"ema@gmail.com\",\n\"password\":\"Random_password\"\n\n}",
+					"raw": "{\n\"email\":\"ema@gmail.com\",\n\"password\":\"Rest957_cat391\"\n\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -320,7 +1088,79 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"email\":\"ema@gmail.com\",\n\"password\":\"Rest957_cat391\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/users/login/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"users",
+								"login",
+								""
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 07 Feb 2022 10:19:20 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.8.10"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "POST, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "110"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"user\": {\n        \"full_name\": \"ema\",\n        \"email\": \"ema@gmail.com\"\n    },\n    \"access_token\": \"afbb9b9c2702fd53449171c61524ee88adb06d6a\"\n}"
+				}
+			]
 		},
 		{
 			"name": "signup",
@@ -337,12 +1177,17 @@
 						},
 						{
 							"key": "email",
-							"value": "ema_12@gmail.com",
+							"value": "ema_13@gmail.com",
 							"type": "text"
 						},
 						{
 							"key": "password_confirmation",
 							"value": "estoesunaprueba",
+							"type": "text"
+						},
+						{
+							"key": "full_name",
+							"value": "Emannuel",
 							"type": "text"
 						}
 					]
@@ -364,7 +1209,95 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "signup",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "password",
+									"value": "estoesunaprueba",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "ema_13@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "estoesunaprueba",
+									"type": "text"
+								},
+								{
+									"key": "full_name",
+									"value": "Emannuel",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/users/signup/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"users",
+								"signup",
+								""
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 07 Feb 2022 11:47:21 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.8.10"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "POST, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "51"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"full_name\": \"Emannuel\",\n    \"email\": \"ema_13@gmail.com\"\n}"
+				}
+			]
 		}
 	]
 }

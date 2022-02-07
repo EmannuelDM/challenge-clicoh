@@ -12,7 +12,9 @@ from .managers import OrderDetailManager, OrderManager
 
 
 class Order(TimeStampedModel):
-    """Modelo que representa a una Sale Global"""
+    """
+    Modelo que representa a una Sale Global
+    """
     #TODO el id es un string???
 
     date_order = models.DateTimeField(
@@ -33,7 +35,9 @@ class Order(TimeStampedModel):
 
 
 class OrderDetail(TimeStampedModel):
-    """Model of the sale detail"""
+    """
+    Model of the sale detail
+    """
 
     order = models.ForeignKey(
         Order, 

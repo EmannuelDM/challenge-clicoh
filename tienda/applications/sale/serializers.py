@@ -15,7 +15,9 @@ class SaleProcessSerializer(serializers.Serializer):
 
 
 class SaleReportSerializers(serializers.ModelSerializer):
-    """ serializdor para ver las ventas en detalle """
+    """ 
+    Serializador para ver las Ordenes con sus detalles
+    """
 
     products = serializers.SerializerMethodField()
     total = serializers.SerializerMethodField()
@@ -43,7 +45,9 @@ class SaleReportSerializers(serializers.ModelSerializer):
  
 
 class OrderDetailsSerializer(serializers.ModelSerializer):
-    """ serializdor para ver las ventas en detalle """
+    """ 
+    Serializdor para ver el detalle de una orden
+    """
     product = serializers.CharField(source='product.name')
     product_id = serializers.IntegerField(source='product.id')
     class Meta:

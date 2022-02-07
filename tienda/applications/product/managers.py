@@ -2,7 +2,6 @@ from django.db import models
 
 
 class ProductManager(models.Manager):
-
   
     def products_con_stock(self):
         # lista products con stock mayor a cero

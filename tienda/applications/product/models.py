@@ -7,9 +7,11 @@ from model_utils.models import TimeStampedModel
 from .managers import ProductManager
 
 class Product(TimeStampedModel):
-    """Modelo que representa a un product de tienda"""
+    """
+    Modelo que representa un Producto
+    """
 
-    #TODO los id tiene que ser string?????
+    #TODO los id tiene que ser string con uuid?????
 
     name = models.CharField(
         'name', 

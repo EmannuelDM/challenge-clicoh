@@ -14,7 +14,6 @@ from .serializers import (
 
 
 class ProductViewSet(viewsets.ModelViewSet):
-    """  """
     serializer_class = ProductSerializerViewSet
     queryset = Product.objects.all()
     pagination_class = PaginationSerializer
